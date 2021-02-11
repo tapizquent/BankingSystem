@@ -1,20 +1,23 @@
 
-/**
- * Must have FIVE depositors and NINE withdrawers at the same time executing.
+/** 
+ * Name: Jose Tapizquent
+ * Course: CNT 4714 Spring 2021
+ * Assignment Title: Project 2 - Synchronized, Cooperating Threads Under Locking
+ * Due Date: February 14, 2021
  * 
- * DEPOSITS: $1-250 whole dollars. Once a depositor has executed, put it to
- * sleep for a few random milliseconds.
- * 
- * WITHDRAWALS: $1-50 whole dollars.
- * 
- * For single core cpus: once a thread has executed, have it yield to another
- * thread. (Since it's voluntarily giving up the processor, it's unlikely it'll
- * run again before another thread has executed.)
- * 
+ * BankingSimulator.java
  */
 
 import java.util.concurrent.*;
 
+/**
+ * Multithreaded banking simulator composed of 5 Depositors and 9 Withdrewers
+ * working at the same time.
+ * 
+ * Each of the actors involved perform in a different thread but are
+ * synchronized to work on the same account.
+ * 
+ */
 public class BankingSimulator {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(14);
